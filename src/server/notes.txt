@@ -1,0 +1,10 @@
+1. Сборка образа
+
+docker build -t exam_srv .
+
+2. Запуск контейнера
+
+docker run -it --rm --name exam_srv -p 8081:8081 exam_srv
+
+3. сайт http://127.0.0.1:8081
+

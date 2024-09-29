@@ -1,0 +1,8 @@
+requests==2.32.3
+pydantic==2.8.2
+pytest==8.2.2
+python-dotenv==1.0.1
+allure-pytest==2.13.5
+selenium==4.23.0
+webdriver-manager==4.0.1
+Faker==26.0.0

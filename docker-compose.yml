@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  webserver:
+    image: server
+    container_name: server
+    ports:
+      - "8081:8081"
+
+  selenium-chrome:
+    image: selenium/standalone-chrome:latest
+    container_name: standalone-chrome
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+    shm_size: 2g
+    restart: always
+
+  automation-tests:
+    image: "tests"
+    container_name: tests
+    depends_on:
+      - webserver
+      - selenium-chrome
+    volumes:
+      - ./:/app
+      - results:/app/allure-results
+    command: /bin/sh -c "pytest -sv"
+    working_dir: /app
+
+  allure-report:
+    image: "allure"
+    depends_on:
+      - automation-tests
+    ports:
+      - "8080:8080"
+    volumes:
+      - results:/app/allure-results
+    command: /bin/sh -c "allure generate /app/allure-results --clean -o /app/allure-report && cd /app/allure-report && python3 -m http.server 8080"
+    working_dir: /app
+
+volumes:
+  results:
+

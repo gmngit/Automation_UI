@@ -1,0 +1,34 @@
+.hello {
+    color: #F00
+}
+
+#carouselPromo {
+
+}
+
+.carousel-item {
+    background-color: #CCC;
+    min-height: 20rem;
+    height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.horizontal-scroll {
+    overflow-x: auto;
+    /*-ms-overflow-style: none;
+    scrollbar-width: none;*/
+}
+
+#srv1img {
+    background-image: url("/assets/img/server1.jpg")
+}
+
+#srv2img {
+    background-image: url("/assets/img/server2.jpg")
+}
+
+#srv3img {
+    background-image: url("/assets/img/server3.jpg")
+}
