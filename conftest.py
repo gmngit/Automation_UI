@@ -36,7 +36,6 @@ def chrome_driver():
     driver.maximize_window()
     yield driver
     driver.delete_all_cookies()
-    # DriverManager().get_browser_logs(driver)
     DriverManager().close_driver(driver)
 
 
