@@ -1,6 +1,9 @@
 ## How to run automation tests
 
 ### 1. Clone the repository
+```python
+git clone https://github.com/gmngit/Automation_UI.git
+```
 
 ### 2. Build image "server"
 ```python
